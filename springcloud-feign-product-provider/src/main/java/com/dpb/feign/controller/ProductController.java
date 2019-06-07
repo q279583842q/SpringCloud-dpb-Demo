@@ -2,6 +2,7 @@ package com.dpb.feign.controller;
 
 
 import com.dpb.feign.pojo.Product;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.dpb.feign.service.ProductService;
 
@@ -30,5 +31,26 @@ public class ProductController implements ProductService{
         list.add(new Product(3, "冰箱"));
         list.add(new Product(4, "洗衣机"));
         return list;
+    }
+
+    /**
+     * 单个参数的处理
+     * @param s
+     * @return
+     */
+    @Override
+    public Product getProductById(Integer id) {
+
+        return new Product(id,"bobo烤鸭-feign");
+    }
+
+    @Override
+    public Product addProductGet(Integer id, String name) {
+        return new Product(id,name);
+    }
+
+    @Override
+    public Product addProductPost(@RequestBody  Product product) {
+        return product;
     }
 }
