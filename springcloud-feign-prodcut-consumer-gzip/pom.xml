@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.dpb</groupId>
-    <artifactId>springcloud-feign-prodcut-consumer</artifactId>
+    <artifactId>springcloud-feign-prodcut-consumer-gzip</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springcloud-feign-prodcut-consumer</name>
+    <name>springcloud-feign-prodcut-consumer-gzip</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
