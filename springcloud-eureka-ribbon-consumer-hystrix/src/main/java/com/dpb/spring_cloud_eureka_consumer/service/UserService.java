@@ -1,6 +1,7 @@
 package com.dpb.spring_cloud_eureka_consumer.service;
 
 import com.dpb.spring_cloud_eureka_consumer.pojo.User;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,6 +30,7 @@ public class UserService {
     @Autowired
    private LoadBalancerClient loadBalancerClient;
 
+    @HystrixCommand(fallbackMethod = "fallBack")
     public List<User> getUsers(){
         // ServiceInstance 封装的有服务的基本信息  IP和端口等
         ServiceInstance si = this.loadBalancerClient.choose("eureka-ribbon-provider");
@@ -44,6 +47,17 @@ public class UserService {
         // ResponseEntity:封装了返回值的信息
         ResponseEntity<List<User>> response = rt.exchange(sb.toString(), HttpMethod.GET,null,type);
         List<User> list = response.getBody();
+        return list;
+    }
+
+    /**
+     * 服务降级
+     *   返回托底数据的方法
+     * @return
+     */
+    public List<User> fallBack(){
+        List<User> list = new ArrayList<>();
+        list.add(new User(3,"我是托底数据",22));
         return list;
     }
 }
