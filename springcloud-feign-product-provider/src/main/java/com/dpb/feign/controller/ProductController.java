@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dpb.feign.service.ProductService;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @program: springcloud-feign-product-provider
@@ -25,6 +27,14 @@ public class ProductController implements ProductService{
      */
     @Override
     public List<Product> findAll() {
+        try{
+            System.out.println("*********"+new Date());
+            // 休眠6秒
+            Thread.sleep(6000);
+        }catch (Exception e){
+
+        }
+
         List<Product> list = new ArrayList<>();
         list.add(new Product(1, "电视"));
         list.add(new Product(2, "电脑"));
