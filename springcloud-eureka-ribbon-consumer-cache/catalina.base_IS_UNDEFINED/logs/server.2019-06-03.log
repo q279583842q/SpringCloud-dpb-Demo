@@ -1,0 +1,84 @@
+2019-06-03 21:07:11.412 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+2019-06-03 21:07:11.445 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+2019-06-03 21:07:11.451 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://127.0.0.1:9090][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2019-06-03 21:07:11.480 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://127.0.0.1:9090][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2019-06-03 21:07:11.490 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://127.0.0.1:9090
+2019-06-03 21:07:11.497 [main] DEBUG o.a.h.i.conn.DefaultHttpClientConnectionOperator - Connecting to /127.0.0.1:9090
+2019-06-03 21:07:11.500 [main] DEBUG o.a.h.i.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:54790<->127.0.0.1:9090
+2019-06-03 21:07:11.501 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request POST /shutdown HTTP/1.1
+2019-06-03 21:07:11.501 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+2019-06-03 21:07:11.502 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+2019-06-03 21:07:11.506 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> POST /shutdown HTTP/1.1
+2019-06-03 21:07:11.506 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Length: 0
+2019-06-03 21:07:11.516 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: 127.0.0.1:9090
+2019-06-03 21:07:11.516 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+2019-06-03 21:07:11.516 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.8 (Java/1.8.0_144)
+2019-06-03 21:07:11.516 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2019-06-03 21:07:11.517 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "POST /shutdown HTTP/1.1[\r][\n]"
+2019-06-03 21:07:11.517 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Length: 0[\r][\n]"
+2019-06-03 21:07:11.518 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: 127.0.0.1:9090[\r][\n]"
+2019-06-03 21:07:11.518 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2019-06-03 21:07:11.520 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.8 (Java/1.8.0_144)[\r][\n]"
+2019-06-03 21:07:11.521 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2019-06-03 21:07:11.522 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+2019-06-03 21:07:11.868 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 [\r][\n]"
+2019-06-03 21:07:11.868 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Application-Context: eureka-provider:9090[\r][\n]"
+2019-06-03 21:07:11.868 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: application/vnd.spring-boot.actuator.v1+json;charset=UTF-8[\r][\n]"
+2019-06-03 21:07:11.869 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2019-06-03 21:07:11.869 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Mon, 03 Jun 2019 13:07:11 GMT[\r][\n]"
+2019-06-03 21:07:11.869 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+2019-06-03 21:07:11.869 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "23[\r][\n]"
+2019-06-03 21:07:11.869 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "{"message":"Shutting down, bye..."}[\r][\n]"
+2019-06-03 21:07:11.876 [main] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 
+2019-06-03 21:07:11.877 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Application-Context: eureka-provider:9090
+2019-06-03 21:07:11.877 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: application/vnd.spring-boot.actuator.v1+json;charset=UTF-8
+2019-06-03 21:07:11.877 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Transfer-Encoding: chunked
+2019-06-03 21:07:11.877 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Mon, 03 Jun 2019 13:07:11 GMT
+2019-06-03 21:07:11.892 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+2019-06-03 21:07:11.994 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "0[\r][\n]"
+2019-06-03 21:07:11.995 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+2019-06-03 21:07:11.997 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {}->http://127.0.0.1:9090] can be kept alive indefinitely
+2019-06-03 21:07:11.999 [main] DEBUG o.a.h.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 0
+2019-06-03 21:07:12.000 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://127.0.0.1:9090][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2019-06-03 21:25:57.289 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+2019-06-03 21:25:57.353 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+2019-06-03 21:25:57.356 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://127.0.0.1:9090][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2019-06-03 21:25:57.434 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://127.0.0.1:9090][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2019-06-03 21:25:57.441 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://127.0.0.1:9090
+2019-06-03 21:25:57.525 [main] DEBUG o.a.h.i.conn.DefaultHttpClientConnectionOperator - Connecting to /127.0.0.1:9090
+2019-06-03 21:25:57.555 [main] DEBUG o.a.h.i.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:55241<->127.0.0.1:9090
+2019-06-03 21:25:57.556 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request POST /shutdown HTTP/1.1
+2019-06-03 21:25:57.579 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+2019-06-03 21:25:57.590 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+2019-06-03 21:25:57.622 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> POST /shutdown HTTP/1.1
+2019-06-03 21:25:57.622 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Content-Length: 0
+2019-06-03 21:25:57.692 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: 127.0.0.1:9090
+2019-06-03 21:25:57.692 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+2019-06-03 21:25:57.692 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.8 (Java/1.8.0_144)
+2019-06-03 21:25:57.692 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2019-06-03 21:25:57.712 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "POST /shutdown HTTP/1.1[\r][\n]"
+2019-06-03 21:25:57.713 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Content-Length: 0[\r][\n]"
+2019-06-03 21:25:57.786 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: 127.0.0.1:9090[\r][\n]"
+2019-06-03 21:25:57.787 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2019-06-03 21:25:57.787 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.8 (Java/1.8.0_144)[\r][\n]"
+2019-06-03 21:25:57.787 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2019-06-03 21:25:57.787 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+2019-06-03 21:25:58.206 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 [\r][\n]"
+2019-06-03 21:25:58.206 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "X-Application-Context: eureka-provider:9090[\r][\n]"
+2019-06-03 21:25:58.206 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: application/vnd.spring-boot.actuator.v1+json;charset=UTF-8[\r][\n]"
+2019-06-03 21:25:58.206 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2019-06-03 21:25:58.207 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Mon, 03 Jun 2019 13:25:58 GMT[\r][\n]"
+2019-06-03 21:25:58.207 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+2019-06-03 21:25:58.207 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "23[\r][\n]"
+2019-06-03 21:25:58.207 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "{"message":"Shutting down, bye..."}[\r][\n]"
+2019-06-03 21:25:58.210 [main] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 
+2019-06-03 21:25:58.211 [main] DEBUG org.apache.http.headers - http-outgoing-0 << X-Application-Context: eureka-provider:9090
+2019-06-03 21:25:58.211 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: application/vnd.spring-boot.actuator.v1+json;charset=UTF-8
+2019-06-03 21:25:58.211 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Transfer-Encoding: chunked
+2019-06-03 21:25:58.211 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Mon, 03 Jun 2019 13:25:58 GMT
+2019-06-03 21:25:58.222 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+2019-06-03 21:25:58.242 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "0[\r][\n]"
+2019-06-03 21:25:58.242 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+2019-06-03 21:25:58.243 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {}->http://127.0.0.1:9090] can be kept alive indefinitely
+2019-06-03 21:25:58.243 [main] DEBUG o.a.h.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 0
+2019-06-03 21:25:58.243 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://127.0.0.1:9090][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
