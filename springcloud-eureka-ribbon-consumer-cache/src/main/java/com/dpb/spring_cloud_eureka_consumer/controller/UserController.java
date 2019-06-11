@@ -4,7 +4,9 @@ import com.dpb.spring_cloud_eureka_consumer.pojo.User;
 import com.dpb.spring_cloud_eureka_consumer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import redis.clients.jedis.Jedis;
 
 import java.util.List;
 
@@ -22,5 +24,16 @@ public class UserController {
     @RequestMapping("/consumer")
     public List<User> getUsers(){
         return this.userService.getUsers();
+    }
+
+
+    @RequestMapping(value="/get",method= RequestMethod.GET)
+    public User get(Integer id){
+
+        return this.userService.getUserById(id);
+    }
+    @RequestMapping(value="/del",method=RequestMethod.GET)
+    public void del(Integer id){
+        this.userService.deleteUserById(id);
     }
 }

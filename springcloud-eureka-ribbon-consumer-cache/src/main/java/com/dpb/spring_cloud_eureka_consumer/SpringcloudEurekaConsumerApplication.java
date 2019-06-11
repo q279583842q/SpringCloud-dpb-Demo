@@ -2,10 +2,11 @@ package com.dpb.spring_cloud_eureka_consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-
-@EnableCircuitBreaker // 开启熔断 断路器
+@EnableCircuitBreaker
+@EnableCaching // 开启缓存
 @EnableEurekaClient
 @SpringBootApplication
 public class SpringcloudEurekaConsumerApplication {

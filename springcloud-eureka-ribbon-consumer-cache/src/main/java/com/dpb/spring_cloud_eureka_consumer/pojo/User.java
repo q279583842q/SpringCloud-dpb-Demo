@@ -1,12 +1,14 @@
 package com.dpb.spring_cloud_eureka_consumer.pojo;
 
+import java.io.Serializable;
+
 /**
  * @program: springcloud-eureka-provider
  * @description: UserBean
  * @author: 波波烤鸭
  * @create: 2019-05-28 17:31
  */
-public class User {
+public class User implements Serializable {
     private int userid;
     private String username;
     private int userage;
