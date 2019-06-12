@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.concurrent.Future;
 
 /**
  * @program: springcloud-eureka-consumer
@@ -20,7 +21,13 @@ public class UserController {
     @Autowired
     private UserService userService;
     @RequestMapping("/consumer")
-    public List<User> getUsers(){
-        return this.userService.getUsers();
+    public void getUsers() throws Exception{
+
+        Future<User> f1 = this.userService.getUser(1);
+        Future<User> f2 = this.userService.getUser(2);
+        Future<User> f3 = this.userService.getUser(3);
+        System.out.println(f1.get().toString());
+        System.out.println(f2.get().toString());
+        System.out.println(f3.get().toString());
     }
 }
