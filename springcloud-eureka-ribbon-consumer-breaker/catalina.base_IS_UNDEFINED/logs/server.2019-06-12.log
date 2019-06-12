@@ -944,3 +944,5 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 2019-06-12 19:16:36.080 [DiscoveryClient-CacheRefreshExecutor-0] WARN  c.n.d.s.t.decorator.RetryableEurekaHttpClient - Request execution failed with message: java.net.SocketTimeoutException: Read timed out
 2019-06-12 19:16:42.717 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.n.d.s.t.decorator.RetryableEurekaHttpClient - Request execution succeeded on retry #1
 2019-06-12 19:16:42.730 [DiscoveryClient-HeartbeatExecutor-0] INFO  c.n.d.s.t.decorator.RetryableEurekaHttpClient - Request execution succeeded on retry #1
+2019-06-12 19:21:25.827 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2019-06-12 19:26:25.732 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
