@@ -4,6 +4,7 @@ import com.dpb.spring_cloud_eureka_consumer.pojo.User;
 import com.dpb.spring_cloud_eureka_consumer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class UserController {
     @Autowired
     private UserService userService;
     @RequestMapping("/consumer")
-    public List<User> getUsers(){
-        return this.userService.getUsers();
+    public List<User> getUsers(@RequestParam("id") Integer id){
+        return this.userService.getUsers(id);
     }
 }

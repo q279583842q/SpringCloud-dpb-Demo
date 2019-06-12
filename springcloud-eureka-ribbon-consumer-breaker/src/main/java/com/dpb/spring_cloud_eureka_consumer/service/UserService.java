@@ -2,6 +2,8 @@ package com.dpb.spring_cloud_eureka_consumer.service;
 
 import com.dpb.spring_cloud_eureka_consumer.pojo.User;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import com.netflix.hystrix.contrib.javanica.conf.HystrixPropertiesManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -30,10 +32,26 @@ public class UserService {
     @Autowired
    private LoadBalancerClient loadBalancerClient;
 
-    @HystrixCommand(fallbackMethod = "fallBack")
-    public List<User> getUsers(){
+    @HystrixCommand(fallbackMethod = "fallback",
+            commandProperties = {
+                    //默认 20 个;10s 内请求数大于 20 个时就启动熔断器，当请求符合熔断条件时将触发 getFallback()。
+            @HystrixProperty(name= HystrixPropertiesManager.CIRCUIT_BREAKER_REQUEST_VOLUME_THRESHOLD,
+                    value="10"),
+            //请求错误率大于 50%时就熔断，然后 for 循环发起请求，当请求符合熔断条件时将触发 getFallback()。
+            @HystrixProperty(name=HystrixPropertiesManager.CIRCUIT_BREAKER_ERROR_THRESHOLD_PERCENTAGE,
+                    value="50"),
+            //默认 5 秒;熔断多少秒后去尝试请求
+            @HystrixProperty(name=HystrixPropertiesManager.CIRCUIT_BREAKER_SLEEP_WINDOW_IN_MILLISECONDS,
+                    value="5000"),
+            })
+    public List<User> getUsers(Integer id){
+        System.out.println("--------->"+id);
+        if(id == 1){
+            throw new RuntimeException();
+        }
         // ServiceInstance 封装的有服务的基本信息  IP和端口等
         ServiceInstance si = this.loadBalancerClient.choose("eureka-ribbon-provider");
+
         StringBuilder sb = new StringBuilder();
         sb.append("http://")
                 .append(si.getHost())
@@ -55,7 +73,7 @@ public class UserService {
      *   返回托底数据的方法
      * @return
      */
-    public List<User> fallBack(){
+    public List<User> fallback(Integer id){
         List<User> list = new ArrayList<>();
         list.add(new User(3,"我是托底数据",22));
         return list;
