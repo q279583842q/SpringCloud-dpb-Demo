@@ -19,8 +19,14 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
     @RequestMapping("/consumer")
     public List<User> getUsers(){
         return this.userService.getUsers();
     }
+    @RequestMapping("/show")
+    public void show(){
+        this.userService.show();
+    }
+
 }

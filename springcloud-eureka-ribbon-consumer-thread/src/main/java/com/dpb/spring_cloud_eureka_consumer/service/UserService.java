@@ -2,6 +2,7 @@ package com.dpb.spring_cloud_eureka_consumer.service;
 
 import com.dpb.spring_cloud_eureka_consumer.pojo.User;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -30,8 +31,19 @@ public class UserService {
     @Autowired
    private LoadBalancerClient loadBalancerClient;
 
-    @HystrixCommand(fallbackMethod = "fallBack")
+    @HystrixCommand(groupKey="ego-product-provider",
+            commandKey = "getUsers",
+            threadPoolKey="ego-product-provider",
+            threadPoolProperties = {
+                    @HystrixProperty(name = "coreSize", value = "30"),//线程池大小
+                    @HystrixProperty(name = "maxQueueSize", value = "100"),//最大队列长度
+                    @HystrixProperty(name =  "keepAliveTimeMinutes", value = "2"),//线程存活时间
+                    @HystrixProperty(name = "queueSizeRejectionThreshold", value = "15")//拒绝请求
+            },
+            fallbackMethod = "fallback")
     public List<User> getUsers(){
+        // 获取当前线程的名称
+        System.out.println(Thread.currentThread().getName());
         // ServiceInstance 封装的有服务的基本信息  IP和端口等
         ServiceInstance si = this.loadBalancerClient.choose("eureka-ribbon-provider");
         StringBuilder sb = new StringBuilder();
@@ -55,9 +67,14 @@ public class UserService {
      *   返回托底数据的方法
      * @return
      */
-    public List<User> fallBack(){
+    public List<User> fallback(){
+        System.out.println(Thread.currentThread().getName());
         List<User> list = new ArrayList<>();
         list.add(new User(3,"我是托底数据",22));
         return list;
+    }
+
+    public void show(){
+        System.out.println("show:"+Thread.currentThread().getName());
     }
 }
