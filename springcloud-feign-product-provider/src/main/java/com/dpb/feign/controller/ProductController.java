@@ -27,13 +27,7 @@ public class ProductController implements ProductService{
      */
     @Override
     public List<Product> findAll() {
-        try{
-            System.out.println("*********"+new Date());
-            // 休眠6秒
-            Thread.sleep(6000);
-        }catch (Exception e){
 
-        }
 
         List<Product> list = new ArrayList<>();
         list.add(new Product(1, "电视"));
