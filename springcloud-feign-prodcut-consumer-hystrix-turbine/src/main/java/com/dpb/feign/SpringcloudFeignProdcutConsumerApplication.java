@@ -6,12 +6,11 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
-@EnableFeignClients
-@EnableDiscoveryClient
+
 @SpringBootApplication
-@EnableHystrix
-@EnableHystrixDashboard
+@EnableTurbine
 public class SpringcloudFeignProdcutConsumerApplication {
 
     public static void main(String[] args) {

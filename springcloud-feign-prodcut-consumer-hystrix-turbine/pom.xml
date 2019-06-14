@@ -55,11 +55,14 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
         </dependency>
-        <!-- 注意：需要添加 service服务的依赖 -->
+        <!-- 添加 turbine 坐标 -->
         <dependency>
-            <groupId>com.dpb</groupId>
-            <artifactId>springcloud-feign-prodcut-service</artifactId>
-            <version>1.0.1-RELEASE</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-turbine</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-turbine</artifactId>
         </dependency>
     </dependencies>
 
